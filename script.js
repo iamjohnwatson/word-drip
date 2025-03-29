@@ -644,7 +644,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     
     // Share result
     function shareResult() {
-        const text = `I scored ${score} points in Word Chain Challenge!\nChain: ${wordChain.join(' → ')}\nPlay at [game link]`;
+        const text = `I scored ${score} points in Word Chain Challenge!\nChain: ${wordChain.join(' → ')}\nPlay at https://iamjohnwatson.github.io/word-chain/`;
         
         if (navigator.share) {
             navigator.share({
