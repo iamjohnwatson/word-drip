@@ -2,8 +2,6 @@
 
 Word Chain Challenge is an interactive word association game where players build chains of related words. Test your vocabulary and creative thinking as you link words together to form a continuous chain.
 
-![Word Chain Challenge](https://via.placeholder.com/800x400)
-
 ## 🎮 How to Play
 
 1. **Start with the given word** and build a chain of 10 related words
