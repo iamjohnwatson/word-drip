@@ -641,7 +641,7 @@ button:active {
     
     .input-container {
         width: 100%;
-        flex-direction: column;
+        flex-direction: auto;
     }
     
     input {
