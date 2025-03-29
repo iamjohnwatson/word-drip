@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Chain Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="main-header">
+                <h1>Word Chain Challenge</h1>
+                <div class="control-panel">
+                    <button id="sound-toggle" class="icon-button" title="Toggle Sound">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        </svg>
+                    </button>
+                    <button id="leaderboard-button" class="icon-button" title="View Leaderboard">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="18" y="3" width="4" height="18"></rect>
+                            <rect x="10" y="8" width="4" height="13"></rect>
+                            <rect x="2" y="13" width="4" height="8"></rect>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <p class="description">Build a chain of related words!</p>
+        </header>
+
+        <div class="streak-banner">
+            <span id="daily-streak">Daily Streak: 0</span>
+        </div>
+
+        <div class="stats-bar">
+            <div id="difficulty-selector">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="wild">Wild!</option>
+                </select>
+            </div>
+            <div id="score" class="score">Score: 0 | Streak: 0 | Chain: 0/10</div>
+        </div>
+
+        <div id="start-word" class="start-word"></div>
+        
+        <div class="progress-bar-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        
+        <div class="word-chain-wrapper">
+            <svg id="connection-svg" class="word-connections"></svg>
+            <div class="word-cards-container">
+                <div id="word-chain" class="word-cards"></div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="word-input" placeholder="Enter a related word..." autocomplete="off">
+            <button id="submit-word">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </button>
+            <div class="hint-buttons">
+                <button id="hint-button-1" class="hint-button" data-level="1" title="First Letter (-5 pts)">L1</button>
+                <button id="hint-button-2" class="hint-button" data-level="2" title="Word Pattern (-10 pts)">L2</button>
+                <button id="hint-button-3" class="hint-button" data-level="3" title="Direct Suggestion (-20 pts)">L3</button>
+            </div>
+        </div>
+        
+        <p id="error-message" class="error-message hidden">❌ Not a valid word!</p>
+        <p id="hint-display" class="hint-display"></p>
+        
+        <div id="completion-message" class="hidden completion-message">
+            <!-- Content will be dynamically inserted -->
+        </div>
+        
+        <div class="instructions">
+            <h3>How to Play</h3>
+            <ul>
+                <li>Start with the given word and build a chain of 10 related words</li>
+                <li>Each word must be logically related to the previous one</li>
+                <li>You don't have to reach the target word, but doing so gives you bonus points!</li>
+                <li>Earn points for rare words, speed, and streaks</li>
+                <li>Use hints if you get stuck (costs points)</li>
+                <li><strong>New:</strong> Click on any word to see its definition</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Definition Modal -->
+    <div id="definition-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-word">Word</h3>
+                <button id="close-modal" class="close-button">&times;</button>
+            </div>
+            <div id="modal-body" class="modal-body">
+                <!-- Definition content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->  
+    <div id="leaderboard-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Leaderboard</h3>
+                <button id="close-leaderboard" class="close-button">&times;</button>
+            </div>
+            <div class="tabs">
+                <button class="tab-button active" data-period="daily">Today</button>
+                <button class="tab-button" data-period="weekly">This Week</button>
+                <button class="tab-button" data-period="alltime">All Time</button>
+            </div>
+            <div id="leaderboard-content" class="leaderboard-content">
+                <!-- Leaderboard content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
