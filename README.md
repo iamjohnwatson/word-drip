@@ -1,98 +1,83 @@
-# Word Chain Challenge
+🧠 Word Drip
 
-Word Chain Challenge is an interactive word association game where players build chains of related words. Test your vocabulary and creative thinking as you link words together to form a continuous chain.
+Word Drip is a fast-paced, tile-based word game that tests your vocabulary under pressure. Start with a grid of letters and race against the clock as new letters drop every few seconds. Can you build enough valid words before time runs out or the board fills up?
 
-## 🎮 How to Play
+⸻
 
-1. **Start with the given word** and build a chain of 10 related words
-2. **Each word must be logically related to the previous one**
-3. You'll see a target word - you don't have to reach it directly, but doing so gives you bonus points!
-4. Earn points for:
-   - Using rare words
-   - Responding quickly
-   - Maintaining streaks
-   - Reaching the target word
-5. Use hints if you get stuck (costs points)
+🎮 How to Play
+	1.	You start with 7 random letters – at least 2 vowels guaranteed
+	2.	After you submit your first valid word, the game begins
+	3.	A new letter is added to the board every 10 seconds
+	4.	You can only use letters currently visible on the board
+	5.	Each letter tile can only be used once per word (unless duplicates exist)
+	6.	The game ends when:
+	•	You reach 15 valid words
+	•	You fill 3 full rows (21 letters)
+	•	Or the 3-minute timer expires
 
-## ✨ Features
+⸻
 
-- **Four difficulty levels**: Easy, Medium, Hard, and Wild!
-- **Interactive word cards**: Click on any word to see its definition
-- **Leaderboards**: Daily, weekly, and all-time high scores
-- **Daily streaks**: Earn streak bonuses for playing consistently
-- **Dynamic scoring system**: Get rewarded for speed, word rarity, and reaching targets
-- **Hint system**: Three levels of hints when you need assistance
-- **Share results**: Easily share your completed chains with friends
-- **Sound effects**: Toggle-able audio feedback
+🧾 Rules & Scoring
+	•	Words must be at least 3 letters long
+	•	You cannot just add an “S” to pluralize existing words
+	•	Word scoring:
+	•	3-letter word → 3 points
+	•	4-letter word → 4 points
+	•	5-letter word → 10 points
+	•	6+ letter word → 15 points
+	•	Bonuses for streaks and long words (coming soon!)
+	•	Hints and streak system (planned for future versions)
 
-## 🛠️ Technical Details
+⸻
 
-The game uses:
-- **ConceptNet API** for word relationships
-- **Dictionary API** for word definitions
-- **IndexedDB** for local storage of game data and leaderboards
-- **SVG graphics** for visualizing word connections
-- **Responsive design** for play on different devices
+✨ Features
+	•	💡 Real-time dynamic letter drops
+	•	🎯 Use only what’s on the board – strategy matters!
+	•	🎵 Sound effects for success, errors, and completion
+	•	📱 Fully responsive design (works great on mobile too)
+	•	🔄 “New Game” button for quick restarts
+	•	ℹ️ Info button that displays game rules mid-game
+	•	🎨 Polished UI with animations and visual feedback
 
-## 🚀 Getting Started
+⸻
 
-### Prerequisites
-- A modern web browser
-- Internet connection (for API access)
+🛠️ Tech Stack
+	•	HTML, CSS, JS (vanilla) — lightweight and fast
+	•	words.json — offline word validation
+	•	CSS animations — visual feedback and transitions
+	•	Sound files — from the sounds/ directory
+	•	Responsive Design — optimized for all device sizes
 
-### Installation
+⸻
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/word-chain-challenge.git
-```
+🎧 Sound Effects
+	•	✅ success.mp3 – when a word is accepted
+	•	❌ error.mp3 – when a word is rejected
+	•	🏁 complete.mp3 – when the goal is reached
 
-2. Navigate to the project directory:
-```bash
-cd word-chain-challenge
-```
+Located in the /sounds folder.
 
-3. Open `index.html` in your browser or serve with a local server:
-```bash
-# Using Python's built-in server (Python 3)
-python -m http.server
+⸻
 
-# Or with Node.js's http-server
-npx http-server
-```
+🧪 Roadmap
+	•	🔥 Daily Streak Tracking
+	•	🌐 Online Leaderboards
+	•	📦 Custom word packs
+	•	💬 Word Definitions popup
+	•	🏆 Achievement badges
+	•	🔄 Multiplayer mode (future)
 
-## 🧠 Game Mechanics
+⸻
 
-### Word Relationships
-Words are considered related if they appear in the ConceptNet database with a "RelatedTo" relationship. This creates natural, intuitive connections between words.
+📜 License
 
-### Scoring System
-- **Base word score**: Based on word length and letter rarity
-- **Speed bonus**: Faster responses earn additional points
-- **Streak bonus**: Consecutive successful words increase your multiplier
-- **Target word bonus**: Reaching the target word gives a significant bonus
-- **Difficulty multiplier**: Higher difficulties multiply your score
+This project is licensed under the MIT License — see the LICENSE file for details.
 
-### Hint System
-- **Level 1**: Shows the first letter of a valid word (-5 points)
-- **Level 2**: Shows a pattern revealing some letters (-10 points)
-- **Level 3**: Directly suggests multiple valid words (-20 points)
+⸻
 
-## 🧪 Future Improvements
+🙌 Acknowledgments
+	•	Mixkit — sound effects
+	•	Feather Icons — UI icons
+	•	words.txt by dwyl — offline dictionary base
 
-- Add multiplayer mode
-- Implement themed word chains (animals, food, etc.)
-- Add more languages
-- Create custom word packs
-- Implement user accounts for cross-device progress
-
-## 📜 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [ConceptNet](https://conceptnet.io/) for providing the word relationship API
-- [Dictionary API](https://dictionaryapi.dev/) for word definitions
-- [Feather Icons](https://feathericons.com/) for UI icons
-- [Mixkit](https://mixkit.co/) for sound effects
+⸻
